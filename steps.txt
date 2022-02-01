@@ -40,3 +40,6 @@
 20. pip3 install jupyter
 21. go to notebooks directory(new folder)
 22. enter jupyter notebook(this redirects to a new jupyter notebook)
+23. use colab for better performance
+24. create a new folder at root directory called savedModels
+25. the model saved in colab using joblib can be inserted in saved models
