@@ -1,0 +1,42 @@
+# This page explains about the steps involved in creating a django application, model devlopment and deployment.
+
+# Create a virtual environment
+
+1. python3 -m venv venv
+2. source venv/bin/activate
+3. pip3 install django
+4. django-admin startproject ml_project
+5. cd ml_project
+6. django-admin startapp ml_app  
+
+**** python manage.py runserver ****
+
+7. In settings.py of ml_project add ml_app
+8. In views.py enter a function that have request as argument that can return some text
+9. in views.py add from django.http import HttpResponse
+10. add the path in urls.py in ml_project along with imports of views from ml_app
+
+**** Other way of showing the urls ****
+
+11. Create an urls.py inside the ml_app
+12. include all the imports
+13. give the include refernece to the urls.py in ml_app from urls.py in ml_project along with adding include imports in ml_project urls.py
+
+**** creating templates folder ****
+
+14. create templates folder in ml_app
+15. in settings.py give the base_dir path for templates
+16. add this path to the templates list in dir 
+
+
+**** templating ****
+
+17. Create an index file inside templates
+18. in the views give the redirection to the index.html using render
+
+**** ML model ****
+
+19. Install jupyter notebook
+20. pip3 install jupyter
+21. go to notebooks directory(new folder)
+22. enter jupyter notebook(this redirects to a new jupyter notebook)
