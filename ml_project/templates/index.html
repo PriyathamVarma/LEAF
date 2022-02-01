@@ -10,7 +10,7 @@
 <body>
 
 <div class="container-fluid p-5 bg-primary text-white text-center">
-  <h1>My First Bootstrap Page</h1>
+  <h1>Policies prediction</h1>
   <p>Resize this responsive page to see the effect!</p> 
 </div>
   
@@ -18,21 +18,59 @@
   <div class="row">
     <div class="col-sm-6">
       <h3>Column 1</h3>
-      <form>
-          Sepal length : <input type="number"  name="sepal_length" required/><br/>
-          Sepal Width : <input type="number"  name="sepal_width" required/><br/>
-          Petal length : <input type="number"  name="petal_length" required/><br/>
-          Petal width : <input type="number"  name="petal_width" required/><br/>
+      <form class='form-control' method='POST'>
+
+        {% csrf_token %}
+
+          <div class="mb-3">
+            <label for="sepal_length" class="form-label">Policy 1:</label>
+            {{form.sepal_length}}
+          </div>
+  
+          <div class="mb-3">
+            <label for="sepal_width" class="form-label">Policy 2:</label>
+            {{form.sepal_width}}
+          </div>
+
+          <div class="mb-3">
+            <label for="petal_length" class="form-label">Policy 3:</label>
+            {{form.petal_length}}
+          </div>
+
+          <div class="mb-3">
+            <label for="petal_width" class="form-label">Policy 4:</label>
+            {{form.petal_width}}
+          </div>
 
           <input type="submit" value="predict"/>
       </form>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      
     </div>
 
     <div class="col-sm-6">
       <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+
+            <th>Sepal length</th>
+            <th>Sepal width</th>
+            <th>Petal length</th>
+            <th>Petal width</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in data %}
+          <tr>
+            <td>{{data.sepal_length}}</td>
+            <td>{{data.sepal_width}}</td>
+            <td>{{data.petal_length}}</td>
+            <td>{{data.petal_width}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
 
   </div>

@@ -4,5 +4,7 @@ from model_app import views
 
 # add url functions here for views
 urlpatterns = [
-    path('',views.predictor),
+    
+    path('',views.predictor,name="prediction"),
+    
 ]
