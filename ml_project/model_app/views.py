@@ -29,7 +29,8 @@ def predictor(request):
             Sepal_Width  : Sepal_Width,
             Petal_length : Petal_length,
             Petal_width  : Petal_width
-                        }"""   
+                        }""" 
+
     form = forms.FormName()                      
     my_dict = {'data':data,'form':form}
     return render(request,'index.html',my_dict)    
